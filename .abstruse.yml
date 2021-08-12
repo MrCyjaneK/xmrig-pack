@@ -1,0 +1,5 @@
+image: mrcyjanek/xmrig-pack:latest
+script:
+  - ./build.sh
+  - cp deb/*.deb /apt
+  - cp xmrig/build/xmrig /archive
