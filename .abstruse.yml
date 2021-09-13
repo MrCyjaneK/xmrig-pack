@@ -1,5 +1,5 @@
 image: mrcyjanek/xmrig-pack:latest
 script:
-  - ./build.sh
+  - ./build.sh v0.16.0
   - cp deb/*.deb /apt
-  - cp xmrig/build/xmrig /archive
+  - cp xmrig/build/xmrig /archive/xmrig-$(uname -m)-v0.16.0

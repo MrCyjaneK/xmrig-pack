@@ -1,9 +1,10 @@
 #!/bin/bash
 set -e
+BRANCH=$1
 BUILDDIR=$(pwd)
 # Fetch the source code
 echo " * Cloning the repo"
-git clone https://github.com/xmrig/xmrig.git --depth=1 || sh -c "cd xmrig && git pull"
+git clone https://github.com/xmrig/xmrig.git -b $BRANCH --depth=1 || sh -c "cd xmrig && git pull && git reset --hard && git checkout git clone $BRANCH"
 echo " * Preparing build directory"
 mkdir xmrig/build || true
 cd xmrig/scripts
