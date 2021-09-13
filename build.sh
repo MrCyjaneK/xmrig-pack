@@ -19,6 +19,7 @@ echo " * Building xmrig (make)"
 make -j$(nproc)
 cd $BUILDDIR/xmrig/build
 VERSION=$(./xmrig --version | tr ' ' "\n" | head -2 | tail -1)
+cp xmrig xmrig-$VERSION
 echo " * Building .deb"
 cp $BUILDDIR/patch/Makefile Makefile
 mkdir -p $BUILDDIR/deb || true
